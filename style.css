@@ -1,0 +1,80 @@
+.gradient {
+  background: linear-gradient(
+    #fb5dad 0%,
+    #55fb9f 45%,
+    #55fb9f 55%,
+    #b97aff 100%
+  );
+  border-radius: 50%;
+}
+.blur {
+  filter: blur(20px);
+  position: absolute;
+  top: -20px;
+  bottom: -20px;
+  left: -20px;
+  right: -20px;
+}
+.crisp {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.gradientParent {
+  margin: 50px auto 0 auto;
+  height: 300px;
+  width: 300px;
+  position: relative;
+  animation-name: animacija;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+@keyframes animacija {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.innerCircle {
+  position: absolute;
+  top: 20px;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  background-color: #050210;
+  border-radius: 50%;
+}
+.innerCircle::after {
+  position: absolute;
+  content: "";
+  border-radius: 50%;
+  animation-name: animacijaDva;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+@keyframes animacijaDva {
+  0% {
+    top: 50%;
+    bottom: 50%;
+    left: 50%;
+    right: 50%;
+    background-color: #1f1836;
+  }
+  100% {
+    top: 0%;
+    bottom: 0%;
+    left: 0%;
+    right: 0%;
+    background-color: #050210;
+  }
+}
+body {
+  background-color: #050210;
+}
